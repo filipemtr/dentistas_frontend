@@ -72,9 +72,11 @@ export default function RegisterPage() {
           />
 
           <button
-              onClick={handleRegister}
-              className="mt-4 rounded-2xl bg-white py-4 text-lg font-black text-blue-700 shadow-2xl transition hover:scale-[1.02]"
-            />
+            onClick={handleRegister}
+            className="mt-4 rounded-2xl bg-white py-4 text-lg font-black text-blue-700 shadow-2xl transition hover:scale-[1.02]"
+          >
+            Criar Conta
+          </button>
 
         </div>
 
