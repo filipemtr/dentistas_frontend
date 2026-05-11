@@ -1,12 +1,36 @@
 "use client"
 
 import { useState } from "react"
+import { registerUser } from "@/src/services/api"
 
 export default function RegisterPage() {
 
   const [nome, setNome] = useState("")
   const [email, setEmail] = useState("")
   const [senha, setSenha] = useState("")
+
+  async function handleRegister() {
+
+  try {
+
+    const response = await registerUser({
+      nome,
+      email,
+      senha
+    })
+
+    console.log(response)
+
+    alert("Conta criada com sucesso!")
+
+  } catch (error) {
+
+    console.error(error)
+
+    alert("Erro ao criar conta!")
+
+  }
+}
 
   return (
 
@@ -47,9 +71,10 @@ export default function RegisterPage() {
             className="rounded-2xl border border-white/20 bg-white/20 p-4 text-white placeholder:text-blue-100 outline-none backdrop-blur-xl focus:border-white"
           />
 
-          <button className="mt-4 rounded-2xl bg-white py-4 text-lg font-black text-blue-700 shadow-2xl transition hover:scale-[1.02]">
-            Criar Conta
-          </button>
+          <button
+              onClick={handleRegister}
+              className="mt-4 rounded-2xl bg-white py-4 text-lg font-black text-blue-700 shadow-2xl transition hover:scale-[1.02]"
+            />
 
         </div>
 
