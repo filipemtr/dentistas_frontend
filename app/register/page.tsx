@@ -8,6 +8,8 @@ export default function RegisterPage() {
   const [nome, setNome] = useState("")
   const [email, setEmail] = useState("")
   const [senha, setSenha] = useState("")
+  const [telefone, setTelefone] = useState("")
+  const [cpf, setCpf] = useState("")
 
   async function handleRegister() {
 
@@ -16,7 +18,9 @@ export default function RegisterPage() {
     const response = await registerUser({
       nome,
       email,
-      senha
+      senha,
+      telefone,
+      cpf
     })
 
     console.log(response)
@@ -68,6 +72,20 @@ export default function RegisterPage() {
             type="password"
             placeholder="Senha"
             onChange={(e) => setSenha(e.target.value)}
+            className="rounded-2xl border border-white/20 bg-white/20 p-4 text-white placeholder:text-blue-100 outline-none backdrop-blur-xl focus:border-white"
+          />
+
+          <input
+            type="text"
+            placeholder="Telefone"
+            onChange={(e) => setTelefone(e.target.value)}
+            className="rounded-2xl border border-white/20 bg-white/20 p-4 text-white placeholder:text-blue-100 outline-none backdrop-blur-xl focus:border-white"
+          />
+
+          <input
+            type="text"
+            placeholder="CPF"
+            onChange={(e) => setCpf(e.target.value)}
             className="rounded-2xl border border-white/20 bg-white/20 p-4 text-white placeholder:text-blue-100 outline-none backdrop-blur-xl focus:border-white"
           />
 
