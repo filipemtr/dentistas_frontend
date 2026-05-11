@@ -18,7 +18,7 @@ export default function RegisterPage() {
     const response = await registerUser({
       nome,
       email,
-      senha,
+      pwd: senha,
       telefone,
       cpf
     })
